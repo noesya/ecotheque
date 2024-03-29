@@ -25,7 +25,7 @@
     </div>
     <div class="row align-items-start position-relative mt-lg-4">
       <div class="offcanvas-search col-lg-3 mt-3 mt-lg-0 pt-3 pt-lg-0" tabindex="-1" id="offcanvasScrolling">
-        <%= render 'faceted_search/facets', facets: @facets, anchor: "#results" %>
+        <%= render 'faceted_search/facets', facets: @facets, anchor: "#results", reset: t('reset') %>
       </div>
       <div class="directory-container col-lg-9 projects-list mt-4 mt-lg-0">
         <%= render 'list', objects: @projects, col_number: 4 %>
