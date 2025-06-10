@@ -1,5 +1,10 @@
 # Ecothèque
 
+
+<a href="https://www.numeriqueinteretgeneral.org/declarations/2024-ecotheque/">
+  <img src="https://www.numeriqueinteretgeneral.org/badges/nig-16-5-0.svg" alt="NIG" width="200" />
+</a>
+
 Porté par *Villette Makerz*
 
 ## Setup
