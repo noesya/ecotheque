@@ -1,7 +1,7 @@
 {
-  "name": "surlaroute",
+  "name": "ecotheque",
   "version": "1.0.0",
-  "repository": "git@github.com:noesya/surlaroute.git",
+  "repository": "git@github.com:noesya/ecotheque.git",
   "dependencies": {
     "@splidejs/splide": "^4.1.4",
     "cropperjs": "^1.6.1",

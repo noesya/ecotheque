@@ -1,7 +1,7 @@
-# Sur la route
+# Ecothèque
 
+Porté par *Villette Makerz*
 
-Ce projet s'appuie sur un fork de l'[écothèque](https://github.com/noesya/ecotheque)
 ## Setup
 
 ### Pré-requis
@@ -11,8 +11,8 @@ Ce projet s'appuie sur un fork de l'[écothèque](https://github.com/noesya/ecot
 ### Récupération du projet
 
 ```
-git clone git@github.com:noesya/surlaroute.git
-cd surlaroute
+git clone git@github.com:noesya/ecotheque.git
+cd ecotheque
 bin/setup
 ```
 
