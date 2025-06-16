@@ -1,7 +1,7 @@
 <% col_number ||= '3' %>
 <div class="row actors-list">
   <% objects.each do |actor| %>
-    <div class="col-6 col-lg-<%= col_number %> mb-5">
+    <div class="col-6 col-lg-<%= col_number %> mb-md-5">
       <%= render "actors/actor", actor: actor %>
     </div>
   <% end %>

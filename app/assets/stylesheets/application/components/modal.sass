@@ -1,18 +1,21 @@
 .modal
     .btn-close
-        filter: invert(1)
         @include media-breakpoint-up(md)
             position: absolute
             top: map-get($spacers, 3)
             right: map-get($spacers, 3)
-
     &.cta-modal
+        .btn-close
+            filter: invert(1)
         .modal-dialog
             max-width: pxToRem(842)
-
-    &-content
         a:not(.btn)
             color: var(--bs-modal-color)
+    &.search-modal
+        a.square
+            text-decoration: none
+            font-family: $font-family-headings
     @include media-breakpoint-down(md)
         &-content
             padding-bottom: var(--bs-modal-header-padding-y)
+            

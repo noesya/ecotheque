@@ -15,6 +15,17 @@ main
     th[scope="row"]
         max-width: 0
 
+
+.dropdown-toggle
+    &::after
+        background: none
+        border: none
+        font-size: 60%
+    &[aria-expanded="true"]
+        @include icon(chevron-up, after)
+    &[aria-expanded="false"]
+        @include icon(chevron-down, after)
+
 article
     .tags
         gap: pxToRem(12)
@@ -24,8 +35,53 @@ article
 .directory
     button
         @include button-reset
+        @extend .text-dark
         &:first-child
             padding-left: 0
+    @include media-breakpoint-up(md)
+        .directory-filters
+            &.is-full-width
+                align-items: baseline
+                flex-direction: row !important
+                justify-content: space-between
+                padding-left: 0
+                margin-bottom: map-get($spacers, 3)
+                width: 100%
+                .navigation-links
+                    padding-right: 0
+                    justify-content: flex-end
+        @include media-breakpoint-down(xxl)
+            .directory-filters:not(.is-full-width)
+                .navigation-links,
+                .js-offcanvas-cta-container
+                    flex-direction: column
+                .navigation-links__list
+                    padding-left: 0
+                    padding-right: 0
+    @include media-breakpoint-down(md)
+        width: 100%
+        .actors-index &
+            .offcanvas-search
+                margin-left: calc(var(--bs-gutter-x) / -2)
+                margin-right: calc(var(--bs-gutter-x) / -2)
+                .faceted__facets
+                    margin-left: calc(var(--bs-gutter-x) / 2)
+                    margin-right: calc(var(--bs-gutter-x) / 2)
+        &-container
+            > [class$="-list"]
+                gap: calc(var(--bs-gutter-x) * 0.5)
+                padding-left: calc(var(--bs-gutter-x) * 0.5)
+                padding-right: calc(var(--bs-gutter-x) * 0.5)
+                > div
+                    padding-left: 0
+                    padding-right: 0
+                    width: calc(50% - calc(var(--bs-gutter-x) * 0.25))
+                .btn-favorites 
+                    padding: 0.25rem
+                    a
+                        margin-top:0.25rem
+                        margin-left: 0.25rem
+                        padding: 0.5rem
 
 .accordion-button
     width: auto

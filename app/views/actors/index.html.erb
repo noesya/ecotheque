@@ -24,16 +24,16 @@
 
 <div class="document-content bg-white py-5" id="results">
   <div class="container directory actors-list">
-    <div class="directory-filters row align-items-baseline">
-      <%= render 'application/offcanvas-search-cta' %>
-      <div class="col d-flex gap-2 justify-content-md-end navigation-links">
-        <%= link_to 'Vue catalogue', actors_path(request.query_parameters.to_hash.merge({anchor: 'results'})), class: 'navigation-links__list' %>
-        <%= link_to 'Vue carte', map_actors_path(request.query_parameters.to_hash.merge({anchor: 'results'})), class: 'navigation-links__map' %>
-      </div>
-    </div>
     <div class="row align-items-start position-relative mt-lg-4">
-      <div class="offcanvas-search col-lg-3 mt-3 mt-lg-0 pt-3 pt-lg-0" tabindex="-1" id="offcanvasScrolling">
-        <%= render 'faceted_search/facets', facets: @facets, anchor: "#results"  %>
+      <div class="directory-filters d-flex flex-column col-lg-3 gap-3">
+        <%= render 'application/offcanvas-search-cta' %>
+        <div class="col d-flex gap-2 navigation-links">
+          <%= link_to 'Vue catalogue', actors_path(request.query_parameters.to_hash.merge({anchor: 'results'})), class: 'navigation-links__list' %>
+          <%= link_to 'Vue carte', map_actors_path(request.query_parameters.to_hash.merge({anchor: 'results'})), class: 'navigation-links__map' %>
+        </div>
+        <div class="offcanvas-search pt-3 pt-lg-0" tabindex="-1" id="offcanvasScrolling">
+          <%= render 'faceted_search/facets', facets: @facets, anchor: "#results"  %>
+        </div>
       </div>
       <div class="directory-container col-lg-9 actors-list mt-4 mt-lg-0">
         <%= render "actors/#{@mode}", objects: @actors, col_number: 4 %>

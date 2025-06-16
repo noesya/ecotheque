@@ -9,7 +9,7 @@
 <%= render 'home/slices/technics' if @technics_count > 0 %>
 <%= render 'home/slices/toolbox' if @toolbox_page.present? %>
 
-<%= render 'join', context: 'home' unless user_signed_in? %>
+<%= render 'join' unless user_signed_in? %>
 
 <section class="home-about bg-light">
   <%= render 'pages/blocks/list', blocks: @home_page.blocks.ordered %>
