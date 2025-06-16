@@ -24,12 +24,12 @@
 
 <div class="document-content bg-white py-5" id="results">
   <div class="container directory actors-list">
-    <div class="directory-filters row align-items-baseline">
-      <%= render 'application/offcanvas-search-cta' %>
-      <div class="col d-flex gap-2 justify-content-md-end navigation-links">
+    <div class="directory-filters row flex-column gap-3">
+      <div class="col d-flex gap-2 navigation-links">
         <%= link_to 'Vue catalogue', actors_path(request.query_parameters.to_hash.merge({anchor: 'results'})), class: 'navigation-links__list' %>
         <%= link_to 'Vue carte', map_actors_path(request.query_parameters.to_hash.merge({anchor: 'results'})), class: 'navigation-links__map' %>
       </div>
+      <%= render 'application/offcanvas-search-cta' %>
     </div>
     <div class="row align-items-start position-relative mt-lg-4">
       <div class="offcanvas-search col-lg-3 mt-3 mt-lg-0 pt-3 pt-lg-0" tabindex="-1" id="offcanvasScrolling">

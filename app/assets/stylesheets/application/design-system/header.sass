@@ -71,14 +71,22 @@ header#document-header
             box-shadow: 0 .5rem 1rem rgba($black, .15)
             margin-top: map-get($spacers, 2)
         .navbar-nav 
-            .dropdown-toggle[aria-expanded="true"]::before
-                background: var(--bs-body-color)
-                bottom: var(--bs-navbar-nav-link-padding-x)
-                content: ''
-                height: 1px
-                left: var(--bs-navbar-nav-link-padding-x)
-                position: absolute
-                right: var(--bs-navbar-nav-link-padding-x)
+            .dropdown-toggle::after
+                background: none
+                border: none
+                font-size: 60%
+            .dropdown-toggle[aria-expanded="true"]
+                @include icon(chevron-up, after)
+                &::before
+                    background: var(--bs-body-color)
+                    bottom: var(--bs-navbar-nav-link-padding-x)
+                    content: ''
+                    height: 1px
+                    left: var(--bs-navbar-nav-link-padding-x)
+                    position: absolute
+                    right: var(--bs-navbar-nav-link-padding-x)
+            .dropdown-toggle[aria-expanded="false"]
+                @include icon(chevron-down, after)
             .dropdown-menu
                 width: 270px
             @include media-breakpoint-up(xl)

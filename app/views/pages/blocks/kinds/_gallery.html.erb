@@ -37,7 +37,7 @@ elements = block.data.dig('elements')
                     <%= kamifusen_tag image_blob,
                                       width: 600,
                                       alt: alt,
-                                      class: 'img-fluid rounded' if image_blob %>
+                                      class: 'rounded' if image_blob %>
                     <% if credit.present? || caption.present? %>
                       <figcaption class="mt-1 small position-absolute">
                         <% if caption.present? %>

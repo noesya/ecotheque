@@ -26,6 +26,17 @@ article
         @include button-reset
         &:first-child
             padding-left: 0
+    @include media-breakpoint-down(md)
+        &-container
+            // todo: better way with bootstrap classes?
+            > [class$="-list"]
+                padding-left: calc(var(--bs-gutter-x) * 0.5)
+                padding-right: calc(var(--bs-gutter-x) * 0.5)
+                column-gap: calc(var(--bs-gutter-x) * 0.5)
+                > div
+                    padding-left: 0
+                    padding-right: 0
+                    width: calc(50% - calc(var(--bs-gutter-x) * 0.25))
 
 .accordion-button
     width: auto
