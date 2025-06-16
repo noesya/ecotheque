@@ -8,7 +8,7 @@
   else
     path = favorites_path(about_id: about.id, about_type: about.class)
     method = :put
-    classes = 'btn btn-sm btn-light bg-white btn-favorites favorites__add'
+    classes = 'btn btn-sm btn-light bg-white favorites__add stretched-link'
     label = t('account.favorites.add')
   end
   %>
@@ -21,5 +21,5 @@
     <% end %>
   <% end %>
 <% else %>
-  <a class="btn btn-sm btn-light bg-white btn-favorites favorites__add" data-bs-toggle="modal" data-bs-target="#favoriteModal"><span><%= t('account.favorites.add') %></span></a>
+  <a class="btn btn-sm btn-light bg-white favorites__add stretched-link" data-bs-toggle="modal" data-bs-target="#favoriteModal"><span><%= t('account.favorites.add') %></span></a>
 <% end %>
