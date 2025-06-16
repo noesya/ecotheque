@@ -10,6 +10,11 @@
         <p class="fw-bold"><%= t('regions.description') %></p>
         <%= link_to 'Découvrir l\'écothèque par région', regions_path(region_slug: nil), class: 'fw-bold' %>
 
+        <dl class="mt-5 text-lowercase">
+          <dt class="key-figure"><%= @regions_count %></dt>
+          <dd><%= Region.model_name.human(count: Region.all.count).downcase %></dd>
+        </dl>
+
       </div>
       <div class="regions-map">
         <%= link_to regions_path(region_slug: nil), class: 'home-navigation__link', title: Region.model_name.human(count: 2) do %>
