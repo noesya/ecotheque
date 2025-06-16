@@ -37,6 +37,6 @@
 <div class="document-content">
   <%= render 'pages/blocks/list', blocks: @page.blocks.ordered %>
   <% if @page.is_donation? %>
-    <iframe id="haWidget" allowtransparency="true" src="https://www.helloasso.com/associations/association-les-augures/formulaires/1/widget" style="width: 100%; border: none;" onload="window.addEventListener( 'message', e => { const dataHeight = e.data.height; const haWidgetElement = document.getElementById('haWidget'); haWidgetElement.height = (dataHeight + 50) + 'px'; } )" ></iframe>
+    <iframe id="haWidget" allowtransparency="true" scrolling="no" src="https://www.helloasso.com/associations/association-les-augures/formulaires/1/widget" style="width: 100%; margin-top: 20px; border: none;" onload="window.addEventListener( 'message', e => { const dataHeight = e.data.height; const haWidgetElement = document.getElementById('haWidget'); haWidgetElement.height = (dataHeight + 50) + 'px'; } )" ></iframe>
   <% end %>
 </div>
