@@ -1,0 +1,27 @@
+<% anchor ||= '' %>
+<% if facet.values.any? %>
+  <%- has_selected_values = facet.values.any? { |value| facet.value_selected?(value.slug) } -%>
+  <li class="accordion-item">
+    <h4 class="accordion-header" id="heading<%= facet.name %>">
+      <button class="accordion-button d-flex w-100 align-items-baseline justify-content-between" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<%= facet.name %>" aria-expanded="<%= has_selected_values %>" aria-controls="collapse<%= facet.name %>">
+        <% unless facet.title.blank? %><b><%= facet.title %></b><% end %>
+      </button>
+    </h4>
+    <div id="collapse<%= facet.name %>" class="accordion-collapse collapse <%= 'show' if has_selected_values %>" aria-labelledby="heading<%= facet.name %>">
+      <ol class="faceted__facet__list list-unstyled">
+        <% facet.values.each do |value| %>
+          <%
+          identifier = value.send facet.find_by
+          display_value = facet.display_method.call(value)
+          %>
+          <li class="faceted__facet__list__value <%= 'faceted__facet__list__value--selected' if facet.value_selected?(identifier) %>">
+            <%= render 'faceted_search/link',
+                      display_value: display_value,
+                      path: facet.facets.path_for(facet, identifier) + anchor,
+                      searchable: facet.searchable %>
+          </li>
+        <% end %>
+      </ol>
+    </div>
+  </li>
+<% end %>
