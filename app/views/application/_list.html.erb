@@ -2,7 +2,7 @@
 <% if objects.any? %>
   <div class="row <%= objects.first.class.name.downcase.pluralize %>-list">
     <% objects.each do |object| %>
-      <div class="col-6 col-lg-<%= col_number %> mb-5">
+      <div class="col-6 col-lg-<%= col_number %> mb-md-5">
         <article class="position-relative">
           <div class="btn-favorites position-absolute pt-1 ps-1">
             <%= render 'favorites/button', about: object %>

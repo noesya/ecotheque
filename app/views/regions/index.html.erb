@@ -6,7 +6,7 @@
       <div class="col-lg-5">
         <hgroup>
           <h1><%= Region.model_name.human(count: 2) %></h1>
-          <p class="mt-3 mt-md-5 col-8 col-md-6 col-lg-12"><%= t('regions.description') %></p>
+          <p class="mt-3 mt-md-5"><%= t('regions.description') %></p>
         </hgroup>
         <dl class="mt-4 mb-3 mt-md-5 mb-md-4">
           <dt class="key-figure"><%= @regions.count %></dt>
@@ -17,24 +17,24 @@
   </div>
 </header>
 
-<div class="document-content bg-white py-5">
-  <div class="container">
-    <div class="row">
+<div class="document-content directory bg-white py-5">
+  <div class="container directory-container">
+    <div class="row regions-list">
       <% @regions.each do |region| %>
-        <div class="col-6 col-lg-4 mb-3 mb-lg-4">
-          <div class="card">
+        <div class="col-6 col-lg-4 mb-md-5">
+          <article class="card">
             <div class="bg-light overflow-hidden square rounded">
               <%= kamifusen_tag region.image,
                                 width: 400,
                                 class: 'square h-100 w-100',
                                 alt: region.image_alt if region.image.attached? %>
             </div>
-            <div class="card-body px-0">
-              <h2 class="card-title h5">
+            <div class="card-body px-0 py-0">
+              <h2>
                 <%= link_to region, region, class: 'stretched-link' %>
               </h2>
             </div>
-          </div>
+          </article>
         </div>
       <% end %>
     </div>
