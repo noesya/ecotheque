@@ -2,11 +2,11 @@
 
 <%= render 'home/slices/hero' %>
 <%= render 'home/slices/quote' %>
+<%= render 'home/slices/regions' if @regions_count > 0 %>
 <%= render 'home/slices/actors' if @actors_count > 0 %>
 <%= render 'home/slices/projects' if @projects_count > 0 %>
 <%= render 'home/slices/materials' if @materials_count > 0 %>
 <%= render 'home/slices/technics' if @technics_count > 0 %>
-<%= render 'home/slices/regions' %>
 <%= render 'home/slices/toolbox' if @toolbox_page.present? %>
 
 <%= render 'join', context: 'home' unless user_signed_in? %>
