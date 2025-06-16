@@ -15,6 +15,17 @@ main
     th[scope="row"]
         max-width: 0
 
+
+.dropdown-toggle
+    &::after
+        background: none
+        border: none
+        font-size: 60%
+    &[aria-expanded="true"]
+        @include icon(chevron-up, after)
+    &[aria-expanded="false"]
+        @include icon(chevron-down, after)
+
 article
     .tags
         gap: pxToRem(12)
@@ -24,19 +35,24 @@ article
 .directory
     button
         @include button-reset
+        @extend .text-dark
         &:first-child
             padding-left: 0
     @include media-breakpoint-down(md)
         &-container
             // todo: better way with bootstrap classes?
             > [class$="-list"]
+                gap: calc(var(--bs-gutter-x) * 0.5)
                 padding-left: calc(var(--bs-gutter-x) * 0.5)
                 padding-right: calc(var(--bs-gutter-x) * 0.5)
-                column-gap: calc(var(--bs-gutter-x) * 0.5)
                 > div
                     padding-left: 0
                     padding-right: 0
                     width: calc(50% - calc(var(--bs-gutter-x) * 0.25))
+                div.btn-favorites
+                    padding-left: 0.25rem !important
+                    padding-top: 0.25rem !important
+                    
 
 .accordion-button
     width: auto

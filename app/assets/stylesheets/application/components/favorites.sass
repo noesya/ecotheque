@@ -7,6 +7,10 @@
 .btn-favorites
     color: $color-text
     z-index: 3
+    a
+        align-items: center
+        display: flex
+        gap: calc(#{map-get($spacers, 1)} / 2)
 
 .projects-list,
 .actors-list,
@@ -15,12 +19,9 @@
     .btn-favorites
         a
             @extend .rounded-pill
-            display: flex
-            align-items: center
-            justify-content: center
-            font-size: 0
             aspect-ratio: 1
+            justify-content: center
             span
-                display: none
+                @extend .visually-hidden
             &::before
                 font-size: $font-size-base

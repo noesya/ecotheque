@@ -70,7 +70,7 @@ page_lab = Page.lab
         </ul>
         <ul class="nav-secondary d-md-flex ps-0">
           <li>
-            <button class="btn-icon btn-search" data-bs-toggle="modal" data-bs-target="#searchModal">
+            <button class="btn-icon btn-search text-dark" data-bs-toggle="modal" data-bs-target="#searchModal">
               <span><%= t('search.label') %></span>
             </button>
           </li>
@@ -100,7 +100,7 @@ page_lab = Page.lab
             <li class="nav-item"><%= link_to t('login.sign_in'), new_user_session_path, class: "btn-icon btn-user" %></li>
           <% end %>
           <% page_donation = Page.find_by(internal_identifier: 'donation') %>
-          <li class="nav-item offset-md-1"><%= link_to page_donation, page_path(page_donation), class: "btn-dotane" %></li>
+          <li class="nav-item offset-md-1"><%= link_to page_donation, page_path(page_donation), class: "btn-dotane rounded-pill" %></li>
         </ul>
       </div>
     </div>
