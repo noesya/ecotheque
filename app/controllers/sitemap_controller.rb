@@ -6,7 +6,7 @@ class SitemapController < ApplicationController
     @materials = Material.published.select(:id, :slug, :updated_at)
     @projects = Project.published.select(:id, :slug, :updated_at)
     @technics = Technic.published.select(:id, :slug, :updated_at)
-    @regions = Region.all
+    @regions = Region.published.select(:id, :slug, :updated_at)
 
     render layout: false
   end

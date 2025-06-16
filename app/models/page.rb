@@ -27,8 +27,9 @@
 #
 class Page < ApplicationRecord
 
-  LAB_INTERNAL_IDENTIFIER = 'le-lab'
-  TOOLBOX_INTERNAL_IDENTIFIER = 'boite-a-outils'
+  LAB_INTERNAL_IDENTIFIER = 'le-lab'.freeze
+  TOOLBOX_INTERNAL_IDENTIFIER = 'boite-a-outils'.freeze
+  DONATION_INTERNAL_IDENTIFIER = 'donation'.freeze
 
   include Loggable
   include Searchable
@@ -71,6 +72,10 @@ class Page < ApplicationRecord
 
   def is_lab?
     internal_identifier == LAB_INTERNAL_IDENTIFIER
+  end
+
+  def is_donation?
+    internal_identifier == DONATION_INTERNAL_IDENTIFIER
   end
 
   def to_s

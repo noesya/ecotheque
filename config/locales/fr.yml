@@ -220,8 +220,8 @@ fr:
               password_strength: ne répond pas aux critères de sécurité
     models:
       actor:
-        one: Acteur·ice
-        other: Acteur·ices
+        one: Acteur·rice
+        other: Acteur·rices
       banner:
         one: Bandeau
         other: Bandeaux
@@ -449,10 +449,10 @@ fr:
     not_registered_yet: Pas encore inscrit·e ?
     not_registered_yet_details:
       list:
-        - Proposer une bonne addresse, un matériau, un projet ou une technique
+        - Proposer une bonne adresse, un matériau, un projet ou une technique
         - Créer votre bibliothèque personnelle de favoris
         - Télécharger les documents
-        - Partager vos retours d'expériences en commentaire
+        - Partager vos retours d'expérience en commentaire
         - Recevoir la newsletter mensuelle avec nos actualités
       text: "L'inscription est gratuite et vous permet de :"
     or: ou bien
@@ -536,7 +536,7 @@ fr:
       actor:
         contact_inventory_url: Doit commencer par https://
         contact_website: Doit commencer par https://
-        description: Vous pouvez ajouter ici votre expérience sur l'acteur·ice et le comité écothèque en fera une relecture et une ré-écriture
+        description: Vous pouvez ajouter ici votre expérience sur l'acteur·rice et le comité écothèque en fera une relecture et une ré-écriture
       definition:
         title: Le texte qui sera recherché dans l'article
       material:
@@ -546,7 +546,7 @@ fr:
         description: Vous pouvez ajouter ici votre expérience sur le projet et le comité écothèque en fera une relecture et une ré-écriture
       structure_item:
         color: Pour ajouter une couleur au bloc (code hexadécimal sans "#" initial)
-        premium: Si actif, le critère sera réservé aux acteur·ices premium.
+        premium: Si actif, le critère sera réservé aux acteur·rices premium.
       technic:
         description: Vous pouvez ajouter ici votre expérience de la technique et le comité écothèque en fera une relecture et une ré-écriture
       user:
@@ -570,21 +570,21 @@ fr:
       address: Adresse
       contact: Contact
       glossary:
-        title: Glossaire des acteur·ice·s
+        title: Glossaire des acteur·rices
       informations: Informations pratiques
       materials:
-        one: Matériau proposé par cet·te acteur·ice
-        other: Matériaux proposés par cet·te acteur·ice
+        one: Matériau proposé par cet·te acteur·rice
+        other: Matériaux proposés par cet·te acteur·rice
       projects:
-        one: Projet relié à cet·te acteur·ice
-        other: Projets reliés à cet·te acteur·ice
+        one: Projet relié à cet·te acteur·rice
+        other: Projets reliés à cet·te acteur·rice
       service_access: Conditions d'accès au service
       technics:
-        one: Technique proposée par cet·te acteur·ice
-        other: Techniques proposées par cet·te acteur·ice
+        one: Technique proposée par cet·te acteur·rice
+        other: Techniques proposées par cet·te acteur·rice
     directories:
       details:
-        actors: Acteur·ice·s de l'économie circulaire
+        actors: Acteur·rices de l'économie circulaire
         materials: Vérifiés et recommandés par la communauté
         projects: L'écoconception appliquée à des projets artistiques et culturels
         regions: Les écosystèmes régionaux de l'écothèque
@@ -625,7 +625,7 @@ fr:
         one: Technique utilisée
         other: Techniques utilisées
     regions:
-      see_all_actors: Voir tous les acteur·ice·s de cette région
+      see_all_actors: Voir tous les acteur·rices de cette région
       see_all_materials: Voir tous les matériaux de cette région
       see_all_projects: Voir tous les projets de cette région
       see_all_technics: Voir toutes les techniques de cette région

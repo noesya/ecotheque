@@ -1,15 +1,18 @@
 <section class="home-navigation regions">
-  <div class="container d-flex flex-column flex-lg-column-reverse pb-5 py-lg-8">
-    <div class="row align-items-end mt-4 mt-xl-8">
+  <div class="container d-flex flex-column pb-5 py-lg-7">
+    <h2><%= Region.model_name.human(count: 2) %></h2>
+    <div class="row align-items-end">
       <div class="col-12 col-xl-8 mb-2 mb-xl-0">
-        <h2><%= Region.model_name.human(count: 2) %></h2>
       </div>
     </div>
-    <div class="row align-items-start mt-5 mt-lg-0">
+    <div class="row align-items-start mt-5">
       <div class="col-lg-4">
         <p class="fw-bold"><%= t('regions.description') %></p>
-        <%= link_to 'Découvrir les écothèques régionales', regions_path(region_slug: nil), class: 'fw-bold' %>
-
+        <%= link_to "Découvrir l'écothèque par région", regions_path(region_slug: nil), class: 'fw-bold' %>
+        <dl class="mt-5">
+          <dt class="key-figure"><%= @regions_count %></dt>
+          <dd><%= Region.model_name.human(count: @regions_count).downcase %></dd>
+        </dl>
       </div>
       <div class="regions-map">
         <%= link_to regions_path(region_slug: nil), class: 'home-navigation__link', title: Region.model_name.human(count: 2) do %>
