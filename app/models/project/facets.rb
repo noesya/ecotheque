@@ -11,10 +11,10 @@ class Project::Facets < FacetedSearch::FacetsWithItems
     }
     add_facets_for_items
     add_facets_for_regions unless @region.present?
-    filter_with_list :criterions, {
-      title: I18n.t('projects.brezet_wheel.title'),
-      source: Project::Criterion.ordered_by_step,
-      habtm: true
-    }
+    # filter_with_list :criterions, {
+    #   title: I18n.t('projects.brezet_wheel.title'),
+    #   source: Project::Criterion.ordered_by_step,
+    #   habtm: true
+    # }
   end
 end
