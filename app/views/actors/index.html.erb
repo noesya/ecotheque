@@ -31,7 +31,7 @@
           <%= link_to 'Vue carte', map_actors_path(request.query_parameters.to_hash.merge({anchor: 'results'})), class: 'navigation-links__map' %>
         </div>
         <%= render 'application/offcanvas-search-cta' %>
-        <div class="offcanvas-search pt-3 pt-lg-0" tabindex="-1" id="offcanvasScrolling">
+        <div class="offcanvas-search py-3 py-lg-0 pb-1 pb-lg-0" tabindex="-1" id="offcanvasScrolling">
           <%= render 'faceted_search/facets', facets: @facets, anchor: "#results"  %>
         </div>
       </div>
