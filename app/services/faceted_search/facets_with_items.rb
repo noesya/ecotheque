@@ -12,6 +12,7 @@ class FacetedSearch::FacetsWithItems < FacetedSearch::Facets
   def add_facets_for_regions
     filter_with_list :regions, {
       title: Region.model_name.human(count: 2),
+      source: Region.ordered,
       find_by: :slug,
       habtm: true
     }

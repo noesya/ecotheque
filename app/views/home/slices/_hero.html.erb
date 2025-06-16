@@ -2,20 +2,13 @@
   <div class="container py-4 pt-0 pt-md-4">
     <div class="row">
       <div class="col-lg-8 offset-lg-2">
-        <h1 class="text-center mt-5">La plateforme collaborative de l'écoscénographie</h1>
-        <div class="home-search mt-3 text-center">
-          <%= form_tag search_path, method: :get, role: "search" do %>
-            <input name="term" class="form-control search-input" type="search" placeholder="Cherchez ici un·e acteur·rice, un projet, un matériau ou une technique écoresponsables" aria-label="<%= t('search.label') %>">
-            <button class="btn-search" type="submit">
-              <span><%= t('search.label') %></span>
-            </button>
-          <% end %>
-        </div>
+        <h1 class="text-center mt-5 mb-3">La plateforme collaborative de l'écoscénographie</h1>
+        <p class="text-center fs-3 fw-bold">S'inspirer, s'outiller et repenser la création dans le cadre des limites planétaires</p>
       </div>
     </div>
     <div class="row mt-lg-5">
       <div class="text-center mt-4 mt-lg-0 home-ecosystem-link order-lg-2 mb-5 mb-lg-0">
-        <%= link_to 'Ou explorez nos annuaires', '#section-actors', class: "link-arrow-down" %>
+        <%= link_to 'Explorez nos annuaires', '#section-actors', class: "link-arrow-down" %>
       </div>
       <div class="col-lg-2 offset-lg-10">
         <p class="small mb-1">Un projet porté par</p>

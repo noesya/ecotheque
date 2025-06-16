@@ -27,18 +27,20 @@ class Region < ApplicationRecord
 
   validates_presence_of :name
 
+  scope :published, -> {
+    base_scope = left_joins(:actors, :materials, :projects)
+    base_scope.merge(Actor.published)
+      .or(base_scope.merge(Material.published))
+      .or(base_scope.merge(Project.published))
+      .distinct
+  }
+
   scope :ordered, -> { order(:name) }
 
   scope :autofilter, -> (parameters) { ::Filters::Autofilter.new(self, parameters).filter }
   scope :autofilter_search, -> (term) {
     where("unaccent(regions.name) ILIKE unaccent(:term)", term: "%#{sanitize_sql_like(term)}%")
   }
-
-  def empty?
-    actors.published.none? && 
-    materials.published.none? && 
-    projects.published.none?
-  end
 
   def to_s
     "#{name}"
