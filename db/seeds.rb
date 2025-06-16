@@ -28,3 +28,7 @@ Page.find_or_create_by(internal_identifier: 'l-association') do |page|
     page.parent = page_lab
     page.position = 1
 end
+Page.find_or_create_by(internal_identifier: 'donation') do |page|
+    page.name = "Faire un don"
+    page.slug = 'faire-un-don'
+end
