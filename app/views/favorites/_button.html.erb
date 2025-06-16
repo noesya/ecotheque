@@ -13,7 +13,7 @@
   end
   %>
   <%= link_to path, method: method, class: classes, data: { about_id: about.id, about_type: about.class.to_s }, remote: true do %>
-    <%= label %>
+    <span><%= label %></span>
     <% if about.user_favorites.any? %>
       <span class="badge rounded-pill text-bg-dark">
         <%= about.user_favorites.count %>
