@@ -1,6 +1,9 @@
 <% anchor ||= '' %>
 <% if facet.values.any? %>
-  <%- has_selected_values = facet.values.any? { |value| facet.value_selected?(value.slug) } -%>
+  <%- has_selected_values = facet.values.any? { |value|
+        identifier = value.public_send facet.find_by
+        facet.value_selected?(identifier)
+      } -%>
   <li class="accordion-item">
     <h4 class="accordion-header" id="heading<%= facet.name %>">
       <button class="accordion-button d-flex w-100 align-items-baseline justify-content-between" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<%= facet.name %>" aria-expanded="<%= has_selected_values %>" aria-controls="collapse<%= facet.name %>">
