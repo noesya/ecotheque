@@ -449,10 +449,10 @@ fr:
     not_registered_yet: Pas encore inscrit·e ?
     not_registered_yet_details:
       list:
-        - Proposer une bonne addresse, un matériau, un projet ou une technique
+        - Proposer une bonne adresse, un matériau, un projet ou une technique
         - Créer votre bibliothèque personnelle de favoris
         - Télécharger les documents
-        - Partager vos retours d'expériences en commentaire
+        - Partager vos retours d'expérience en commentaire
         - Recevoir la newsletter mensuelle avec nos actualités
       text: "L'inscription est gratuite et vous permet de :"
     or: ou bien
