@@ -8,6 +8,10 @@
           <h1><%= Region.model_name.human(count: 2) %></h1>
           <p class="mt-3 mt-md-5 col-8 col-md-6 col-lg-12"><%= t('regions.description') %></p>
         </hgroup>
+        <dl class="mt-4 mb-3 mt-md-5 mb-md-4">
+          <dt class="key-figure"><%= @regions.count %></dt>
+          <dd><%= Region.model_name.human(count: @regions.count) %></dd>
+        </dl>
       </div>
     </div>
   </div>
@@ -18,7 +22,6 @@
   <div class="container">
     <div class="row">
       <% @regions.each do |region| %>
-        <% next if region.empty? %>
         <div class="col-6 col-lg-4 mb-3 mb-lg-4">
           <div class="card">
             <div class="bg-light overflow-hidden square rounded">

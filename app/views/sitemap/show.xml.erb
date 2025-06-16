@@ -56,7 +56,6 @@
   </url>
   <% @regions.find_each do |region| %>
     <%
-      next if region.empty?
       actors_max_updated_at = region.actors.published.maximum(:updated_at) || Date.today
       materials_max_updated_at = region.materials.published.maximum(:updated_at) || Date.today
       projects_max_updated_at = region.projects.published.maximum(:updated_at) || Date.today
