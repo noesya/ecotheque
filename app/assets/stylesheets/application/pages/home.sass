@@ -5,6 +5,8 @@
         footer
             background: #292929
             color: white
+    .credit-logo
+        max-width: 100%
     @include media-breakpoint-up(lg)
         h1
             font-size: pxToRem(84)
@@ -108,9 +110,9 @@
             &:hover::after
                 margin-left: map-get($spacers, 2)
             @include media-breakpoint-up(md)
-                font-size: pxToRem(38)
+                font-size: pxToRem(28)
                 &::after
-                    font-size: pxToRem(32)
+                    font-size: pxToRem(20)
                 &:hover::after
                     margin-left: map-get($spacers, 3)
     &__link
