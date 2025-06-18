@@ -5,6 +5,7 @@
     <%= show @page, :path, type: :string %>
     <%= show @page, :parent, type: :string, value: link_to(@page.parent, [:admin, @page.parent]) if @page.parent %>
     <%= show @page, :children, type: :list, value: @page.children.ordered_by_position if @page.children.any? %>
+    <%= show @page, :menu_description, type: :string if @page.parent&.is_toolbox? %>
   </div>
   <div class="col-lg-8">
     <%= show @page, :description %>

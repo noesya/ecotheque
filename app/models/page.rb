@@ -7,6 +7,7 @@
 #  body_class          :string           default("")
 #  description         :text
 #  internal_identifier :string
+#  menu_description    :string
 #  meta_description    :text
 #  meta_title          :string
 #  name                :string           not null
@@ -73,6 +74,10 @@ class Page < ApplicationRecord
 
   def is_lab?
     internal_identifier == LAB_INTERNAL_IDENTIFIER
+  end
+
+  def is_toolbox?
+    internal_identifier == TOOLBOX_INTERNAL_IDENTIFIER
   end
 
   def is_donation?

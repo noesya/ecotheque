@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_06_06_144049) do
+ActiveRecord::Schema[7.2].define(version: 2025_06_18_151916) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "unaccent"
@@ -266,6 +266,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_06_06_144049) do
     t.integer "ancestor_kind", default: 0
     t.string "meta_title"
     t.text "meta_description"
+    t.string "menu_description"
     t.index ["parent_id"], name: "index_pages_on_parent_id"
   end
 

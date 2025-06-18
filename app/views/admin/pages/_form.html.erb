@@ -20,6 +20,7 @@
                         collection: collection_tree(Page.all, page),
                         label_method: ->(p) { sanitize p[:label] },
                         value_method: ->(p) { p[:id] } unless page.internal_identifier.present? %>
+      <%= f.input :menu_description if page.parent&.is_toolbox? %>
     </div>
   </div>
 

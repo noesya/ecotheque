@@ -56,6 +56,9 @@ page_lab = Page.lab
                   <li>
                   <%= link_to page, class: "dropdown-item dropdown-item--ecosystem py-2" do %>
                     <b><%= sanitize page.name %></b>
+                    <% if page.menu_description %>
+                      <span><%= page.menu_description %></span>
+                    <% end %>
                   <% end %>
                   </li>
                 <% end %>

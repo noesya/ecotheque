@@ -85,7 +85,7 @@ class Admin::PagesController < Admin::ApplicationController
   def page_params
     params.require(:page)
           .permit(
-            :name, :slug, :description, :parent_id, :position, :meta_title, :meta_description, :meta_illustration, :meta_description_delete
+            :name, :slug, :description, :parent_id, :menu_description, :position, :meta_title, :meta_description, :meta_illustration, :meta_description_delete
           )
   end
 end
