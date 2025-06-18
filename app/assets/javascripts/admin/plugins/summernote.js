@@ -48,7 +48,8 @@ window.summernoteManager = {
         this.setConfig('mini', {
             toolbar: [
                 ['font', ['bold', 'italic']],
-                ['insert', ['link', 'unlink']]
+                ['insert', ['link', 'unlink']],
+                ['view', ['codeview']]
             ],
             followingToolbar: true,
             disableDragAndDrop: true,

@@ -27,6 +27,7 @@
 #
 class Page < ApplicationRecord
 
+  HOME_INTERNAL_IDENTIFIER = 'home'.freeze
   LAB_INTERNAL_IDENTIFIER = 'le-lab'.freeze
   TOOLBOX_INTERNAL_IDENTIFIER = 'boite-a-outils'.freeze
   DONATION_INTERNAL_IDENTIFIER = 'donation'.freeze
@@ -89,10 +90,11 @@ class Page < ApplicationRecord
   private
 
   def set_body_class
-    self.body_class = 'toolbox-index' if internal_identifier == 'boite-a-outils'
-    self.body_class = 'laboratory-index' if internal_identifier == 'le-lab'
-    self.body_class = 'toolbox-child' if ancestors.pluck(:internal_identifier).include?('boite-a-outils')
-    self.body_class = 'laboratory-child' if ancestors.pluck(:internal_identifier).include?('le-lab')
+    self.body_class = 'toolbox-index' if internal_identifier == TOOLBOX_INTERNAL_IDENTIFIER
+    self.body_class = 'laboratory-index' if internal_identifier == LAB_INTERNAL_IDENTIFIER
+    self.body_class = 'donation-show' if internal_identifier == DONATION_INTERNAL_IDENTIFIER
+    self.body_class = 'toolbox-child' if ancestors.pluck(:internal_identifier).include?(TOOLBOX_INTERNAL_IDENTIFIER)
+    self.body_class = 'laboratory-child' if ancestors.pluck(:internal_identifier).include?(LAB_INTERNAL_IDENTIFIER)
   end
 
   def set_path

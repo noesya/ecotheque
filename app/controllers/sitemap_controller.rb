@@ -1,6 +1,6 @@
 class SitemapController < ApplicationController
   def show
-    @home_page = Page.find_by(internal_identifier: 'home')
+    @home_page = Page.find_by(internal_identifier: Page::HOME_INTERNAL_IDENTIFIER)
     @pages = Page.where.not(id: @home_page.id).select(:id, :path, :updated_at)
     @actors = Actor.published.select(:id, :slug, :updated_at)
     @materials = Material.published.select(:id, :slug, :updated_at)

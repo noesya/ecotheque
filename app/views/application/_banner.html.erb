@@ -1,8 +1,8 @@
-<div class="banner" style="background-color: <%= @banner.background_color %>">
+<div class="banner banner--background-<%= @banner.background_color.delete('#') %>" style="background-color: <%= @banner.background_color %>">
   <div class="container py-2">
     <div class="row">
       <div class="col-xxl-8 offset-xxl-2">
-        <p><%= sanitize @banner.text %></p>
+        <%= sanitize @banner.text %>
       </div>
     </div>
   </div>
