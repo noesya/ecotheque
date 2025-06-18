@@ -52,7 +52,6 @@ namespace :admin do
       end
     end
   end
-  resources :subscriptions, only: [:index, :show]
   get 'logs' => 'logs#index', as: :logs
   namespace :transparency do
     resources :years do

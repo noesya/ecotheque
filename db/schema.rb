@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_06_18_151916) do
+ActiveRecord::Schema[7.2].define(version: 2025_06_18_152740) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "unaccent"
@@ -270,15 +270,6 @@ ActiveRecord::Schema[7.2].define(version: 2025_06_18_151916) do
     t.index ["parent_id"], name: "index_pages_on_parent_id"
   end
 
-  create_table "products", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "name"
-    t.text "description"
-    t.decimal "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "redirect_url"
-  end
-
   create_table "project_answers", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "criterion_id", null: false
     t.uuid "project_id", null: false
@@ -408,20 +399,6 @@ ActiveRecord::Schema[7.2].define(version: 2025_06_18_151916) do
     t.datetime "updated_at", null: false
     t.index ["about_type", "about_id"], name: "index_criterion_values_on_about"
     t.index ["item_id"], name: "index_structure_values_on_item_id"
-  end
-
-  create_table "subscriptions", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.uuid "user_id", null: false
-    t.uuid "product_id", null: false
-    t.datetime "paid_at"
-    t.bigint "helloasso_checkout_intent_identifier"
-    t.bigint "helloasso_order_identifier"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.decimal "paid_amount"
-    t.date "expiration_date"
-    t.index ["product_id"], name: "index_subscriptions_on_product_id"
-    t.index ["user_id"], name: "index_subscriptions_on_user_id"
   end
 
   create_table "technics", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -563,8 +540,6 @@ ActiveRecord::Schema[7.2].define(version: 2025_06_18_151916) do
   add_foreign_key "structure_options_values", "structure_values", column: "value_id"
   add_foreign_key "structure_value_files", "structure_values", column: "value_id"
   add_foreign_key "structure_values", "structure_items", column: "item_id"
-  add_foreign_key "subscriptions", "products"
-  add_foreign_key "subscriptions", "users"
   add_foreign_key "transparency_costs", "transparency_years"
   add_foreign_key "transparency_revenues", "transparency_years"
   add_foreign_key "user_comments", "user_comments", column: "reply_to_id"

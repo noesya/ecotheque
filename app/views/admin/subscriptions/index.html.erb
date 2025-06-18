@@ -1,4 +1,0 @@
-<%= content_for :title, "#{Subscription.model_name.human(count: 2)} (#{@subscriptions.total_count})" %>
-
-<%= render 'admin/subscriptions/list', subscriptions: @subscriptions %>
-<%= paginate @subscriptions, theme: 'bootstrap-5' %>

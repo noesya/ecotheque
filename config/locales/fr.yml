@@ -139,16 +139,7 @@ fr:
         file: Fichier
         image: Image
         text: Texte
-        title: Titre
-      subscription:
-        expiration_date: Date d'expiration
-        helloasso_checkout_intent_identifier: Référence de session de paiement HelloAsso
-        helloasso_order_identifier: Référence de commande HelloAsso
-        paid_amount: Montant payé
-        paid_at: Payé le
-        product: Produit
-        reference: Référence
-        user: Utilisateur
+        title: Titre      
       technic:
         actors: Contacts
         authors: Fiche publiée par
@@ -246,10 +237,7 @@ fr:
         other: Régions
       structure/item:
         one: Élément
-        other: Éléments
-      subscription:
-        one: Abonnement
-        other: Abonnements
+        other: Éléments      
       technic:
         one: Technique
         other: Techniques
