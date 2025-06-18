@@ -8,8 +8,7 @@ class Admin::DashboardController < Admin::ApplicationController
       Page,
       Definition,
       Region,
-      User,
-      Subscription
+      User
     ]
     @comments_pending_count = User::Comment.pending.count
     breadcrumb
