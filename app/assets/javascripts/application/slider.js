@@ -8,7 +8,7 @@ window.ecotheque.slider = {
         this.sliders = document.querySelectorAll('.splide');
         this.breakpoint = 768;
 
-        if(window.innerWidth <= this.breakpoint || !this.sliders) {
+        if (window.innerWidth <= this.breakpoint || !this.sliders) {
             return;
         }
         this.listen();
