@@ -6,14 +6,14 @@
     &__list
         flex-wrap: nowrap
         gap: $grid-gutter-width
-        height: 80vh
     &__arrows
         text-align: right
-        margin-top: map-get($spacers, 5)
         .splide__arrow
             background: none
             border: none
             cursor: pointer
+            @include media-breakpoint-down(md)
+                margin-top: map-get($spacers, 2)
             svg
                 display: none
             &--prev
@@ -21,9 +21,9 @@
             &--next
                 @include icon(arrow-right)
                 margin-left: map-get($spacers, 1)
-    &__slide 
-        img
-            height: 80vh
+    &__slide img
+        @include media-breakpoint-up(md)
+            height: 70vh
             width: auto
     @media print
         &__list

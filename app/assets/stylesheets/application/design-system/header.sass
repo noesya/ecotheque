@@ -15,6 +15,10 @@ header#document-header
         @include media-breakpoint-down(md)
             width: fit-content
     .navbar-nav
+        .nav-item:first-child .nav-link
+            padding-left: 0
+            &::before
+                left: 0 !important
         .dropdown-menu
             li a
                 font-size: 0.8rem
@@ -73,7 +77,7 @@ header#document-header
         .navbar-nav 
             .dropdown-toggle[aria-expanded="true"]::before
                 background: var(--bs-body-color)
-                bottom: var(--bs-navbar-nav-link-padding-x)
+                bottom: 0
                 content: ''
                 height: 1px
                 left: var(--bs-navbar-nav-link-padding-x)
@@ -119,6 +123,10 @@ header#document-header
                 margin-left: calc(var(--bs-gutter-x) * -0.5)
                 margin-right: calc(var(--bs-gutter-x) * -0.5)
                 --bs-dropdown-item-padding-x: #{map-get($spacers, 3)}
+            .nav-link
+                &:focus,
+                &:focus-visible
+                    box-shadow: none
         .nav-secondary
             margin-top: map-get($spacers, 2)
             > li 
