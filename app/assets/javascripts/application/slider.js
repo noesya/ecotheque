@@ -15,21 +15,22 @@ window.ecotheque.slider = {
     },
     listen: function () {
         'use strict';
-        this.sliders.forEach(slider => {
-          this.slides = slider.querySelectorAll('.splide__slide');
+        this.sliders.forEach(function (slider) {
+            this.slides = slider.querySelectorAll('.splide__slide');
 
-          this.updateFigcaptionSize();
-          window.addEventListener('resize', this.updateFigcaptionSize.bind(this));
-        });
+            this.updateFigcaptionSize();
+            window.addEventListener('resize', this.updateFigcaptionSize.bind(this));
+        }.bind(this));
     },
     updateFigcaptionSize: function () {
-        this.slides.forEach(slide => {
-          var figcaption = slide.querySelector('figcaption');
-          if (figcaption) {
-              var image = slide.querySelector('picture');
-              figcaption.style.maxWidth = `${image.offsetWidth}px`;
-          }
-        });
+        'use strict';
+        this.slides.forEach(function (slide) {
+            this.figcaption = slide.querySelector('figcaption');
+            if (this.figcaption) {
+                this.image = slide.querySelector('picture');
+                this.figcaption.style.maxWidth = this.image.offsetWidth + 'px';
+            }
+        }.bind(this));
     }
 };
 
