@@ -7,6 +7,7 @@
     &::before
         @include rounded-icon
         font-size: pxToRem(12)
+        color: $color-text
 
 .search-modal
     .search-container
@@ -32,6 +33,22 @@
     .col
         position: relative
 
+    .search-quick-links
+        @include media-breakpoint-down(md)
+            .row
+                gap: calc(var(--bs-gutter-x) * 0.5)
+                margin-right: 0
+                margin-left: 0
+                > div
+                    padding-left: 0
+                    padding-right: 0
+                    width: calc(50% - calc(var(--bs-gutter-x) * 0.25))
+                    &, a
+                        margin-bottom: 0 !important
+                    @media (max-width: 370px)
+                        a
+                            font-size: $h3-font-size
+                            line-height: $h3-line-height
 .search-container
     form[role="search"]
         input

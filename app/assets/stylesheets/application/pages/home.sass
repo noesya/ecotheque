@@ -81,8 +81,10 @@
         background-color: $regions-primary
         background-image: asset-url("letters/home/home-regions.svg")
         transition: background-color 0.3s ease, background-image 0.3s ease
-        .home-navigation__link::before
-            content: none
+        .home-navigation__link
+            mix-blend-mode: difference
+            &::before
+                content: none
         .regions-map
             @extend .col-md-8
             @extend .col-xxl-6
@@ -95,6 +97,9 @@
             background-image: asset-url("letters/home/home-regions-hovered.svg")
             &, a
                 color: $regions-primary
+        &:not(.is-hovered)
+            .home-navigation__link
+                filter: invert(1) brightness(20)
     &.toolbox
         background-color: $toolbox-primary
         background-image: asset-url("letters/home/home-toolbox.svg")
