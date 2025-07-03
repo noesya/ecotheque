@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "3.4.1"
+ruby "3.4.4"
 
 gem "activestorage-scaleway-service", "~> 1"
 gem "bootsnap", require: false
@@ -31,8 +31,8 @@ gem "ostruct"
 gem "popper_js", "~> 2"
 gem "pg", "~> 1"
 gem "puma", "~> 6"
-gem "rails", "~> 7.2"
-gem "rails-i18n", "~> 7"
+gem "rails", "~> 8"
+gem "rails-i18n"
 gem "searchkick", "~> 5.3"
 gem "sib-api-v3-sdk", "~> 9"
 gem "simple_form", "~> 5"
@@ -46,7 +46,7 @@ gem "two_factor_authentication", git: "https://github.com/noesya/two_factor_auth
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 
 group :development, :test do
-  gem "annotate", "~> 3"
+  gem "annotaterb"
   gem "byebug"
   gem "dotenv-rails", "~> 2"
 end

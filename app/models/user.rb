@@ -5,7 +5,7 @@
 #  id                            :uuid             not null, primary key
 #  allow_listing                 :boolean          default(TRUE)
 #  confirmation_sent_at          :datetime
-#  confirmation_token            :string           indexed
+#  confirmation_token            :string           uniquely indexed
 #  confirmed_at                  :datetime
 #  current_sign_in_at            :datetime
 #  current_sign_in_ip            :string
@@ -13,8 +13,8 @@
 #  direct_otp                    :string
 #  direct_otp_delivery_method    :string
 #  direct_otp_sent_at            :datetime
-#  email                         :string           default(""), not null, indexed
-#  encrypted_otp_secret_key      :string           indexed
+#  email                         :string           default(""), not null, uniquely indexed
+#  encrypted_otp_secret_key      :string           uniquely indexed
 #  encrypted_otp_secret_key_iv   :string
 #  encrypted_otp_secret_key_salt :string
 #  encrypted_password            :string           default(""), not null
@@ -27,14 +27,14 @@
 #  mobile_phone                  :string
 #  remember_created_at           :datetime
 #  reset_password_sent_at        :datetime
-#  reset_password_token          :string           indexed
+#  reset_password_token          :string           uniquely indexed
 #  role                          :integer          default("visitor"), not null
 #  second_factor_attempts_count  :integer          default(0)
 #  session_token                 :string
 #  sign_in_count                 :integer          default(0), not null
 #  totp_timestamp                :datetime
 #  unconfirmed_email             :string
-#  unlock_token                  :string           indexed
+#  unlock_token                  :string           uniquely indexed
 #  website                       :string
 #  created_at                    :datetime         not null
 #  updated_at                    :datetime         not null

@@ -8,7 +8,7 @@
 #  image_credit :string
 #  name         :string
 #  published    :boolean          default(FALSE)
-#  slug         :string           indexed
+#  slug         :string           uniquely indexed
 #  sources      :text
 #  status       :integer          default("draft")
 #  created_at   :datetime         not null
