@@ -1,5 +1,4 @@
 class Admin::MailerContentsController < Admin::ApplicationController
-
   load_and_authorize_resource
 
   def index
@@ -40,4 +39,5 @@ class Admin::MailerContentsController < Admin::ApplicationController
             :subject, :body, :published
           )
   end
+  
 end

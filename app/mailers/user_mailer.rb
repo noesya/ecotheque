@@ -1,5 +1,4 @@
 class UserMailer < ApplicationMailer
-
   default template_path: 'mailers/user'
 
   def welcome_message
