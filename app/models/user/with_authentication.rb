@@ -72,7 +72,7 @@ module User::WithAuthentication
     end
 
     def send_welcome_message
-      UserMailer.with(user: self).welcome_message.deliver_later 
+      UserMailer.welcome_message(self).deliver_later 
     end
 
   end
