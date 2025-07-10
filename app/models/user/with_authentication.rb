@@ -72,8 +72,7 @@ module User::WithAuthentication
     end
 
     def send_welcome_message
-      welcome_message_content = MailerContent.find_by(identifier: 'welcome_message')
-      UserMailer.with(user: self).welcome_message.deliver_later if welcome_message_content.published?
+      UserMailer.with(user: self).welcome_message.deliver_later 
     end
 
   end
