@@ -18,6 +18,7 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.item :downloads, User::Log.model_name.human(count: 2), admin_logs_path, { icon: Icon::LOG } if can?(:read, User::Log)
     primary.item :users, User.model_name.human(count: 2), admin_users_path, { icon: Icon::USER } if can?(:read, User)
     primary.item :transparency, t('ui.transparency.title'), admin_transparency_years_path, { icon: Icon::TRANSPARENCY } if can?(:read, Transparency)
+    primary.item :mailer_contents, MailerContent.model_name.human(count: 2), admin_mailer_contents_path, { icon: Icon::MAILER } if can?(:update, MailerContent)
     primary.item :banner, Banner.model_name.human, admin_banner_path, { icon: Icon::BANNER } if can?(:update, Banner)
     primary.item :structure, t('admin.structure.title'), nil, { icon: Icon::STRUCTURE } do |secondary|
       Structure::Item::ABOUT_CLASSES.each do |about_class|

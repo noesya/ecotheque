@@ -1,0 +1,26 @@
+<%= content_for :title, @mailer_content %>
+
+<%= simple_form_for [:admin, @mailer_content] do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="row">
+    <div class="col-lg-8">
+      <%= f.input :subject %>
+      <%= f.input :body,
+                  as: :summernote,
+                  input_html: {
+                    data: {
+                      "summernote-config": "mini"
+                    }
+                  } %>
+    <div class="col-lg-4">
+      <%= f.input :published %>
+    </div>
+  </div>
+
+  <% content_for :buttons do %>
+    <%= submit f %>
+  <% end %>
+<% end %>
+

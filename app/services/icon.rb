@@ -7,6 +7,7 @@ class Icon
   DEFINITION = 'bi bi-body-text'
   DOWNLOAD = 'bi bi-download'
   LOG = 'bi bi-download'
+  MAILER = 'bi bi-envelope'
   MATERIAL = 'bi bi-box-fill'
   PAGE = 'bi bi-file-earmark-fill'
   PRODUCT = 'bi bi-tag-fill'

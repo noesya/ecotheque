@@ -15,6 +15,7 @@ module User::WithAuthentication
     validates_acceptance_of :accepts_terms_of_service, on: :create
 
     before_validation :adjust_mobile_phone, :sanitize_fields
+    after_create :send_welcome_message
 
     # Inject a session_token in user salt to prevent Cookie session hijacking
     # https://makandracards.com/makandra/53562-devise-invalidating-all-sessions-for-a-user
@@ -69,5 +70,11 @@ module User::WithAuthentication
       return if password.blank? || password =~ /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#{Rails.application.config.allowed_special_chars}]).{#{Devise.password_length.first},#{Devise.password_length.last}}$/
       errors.add :password, :password_strength
     end
+
+    def send_welcome_message
+      welcome_message_content = MailerContent.find_by(identifier: 'welcome_message')
+      UserMailer.with(user: self).welcome_message.deliver_later if welcome_message_content.published?
+    end
+
   end
 end

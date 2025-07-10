@@ -59,6 +59,7 @@ namespace :admin do
       resources :costs, except: :index
     end
   end
+  resources :mailer_contents, except: [:new, :create, :destroy]
   get 'banner' => 'banner#edit'
   patch 'banner' => 'banner#update'
   get 'analytics' => 'analytics#index'

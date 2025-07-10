@@ -60,6 +60,11 @@ fr:
       definition/alias:
         text: Texte
         title: Titre
+      mailer_content:
+        body: Corps du mail
+        identifier: Identifiant
+        published: Publié
+        subject: Sujet du mail
       material:
         actors: Fabriqué par
         authors: Fiche publiée par
@@ -223,6 +228,9 @@ fr:
       definition/alias:
         one: Alias
         other: Aliases
+      mailer_content:
+        one: Textes de l'email
+        other: Textes des emails
       material:
         one: Matériau
         other: Matériaux
