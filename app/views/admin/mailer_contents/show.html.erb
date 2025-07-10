@@ -1,0 +1,15 @@
+<%= content_for :title, @mailer_content %>
+
+<div class="row">
+  <div class="col-lg-8">
+    <%= show @mailer_content, :subject, type: :string %>
+    <%= show @mailer_content, :body %>
+  </div>
+  <div class="col-lg-4">
+    <%= show @mailer_content, :published %>
+  </div>
+</div>
+
+<% content_for :buttons do %>
+  <%= edit_link @mailer_content %>
+<% end %>

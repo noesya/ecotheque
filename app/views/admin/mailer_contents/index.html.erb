@@ -1,0 +1,26 @@
+<%= content_for :title, "#{MailerContent.model_name.human(count: 2)} (#{@mailer_contents.count})" %>
+
+<div class="table-responsive">
+  <table class="<%= table_classes %>">
+    <thead>
+      <tr>
+        <th><%= MailerContent.human_attribute_name('identifier') %></th>
+        <th><%= MailerContent.human_attribute_name('published') %></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @mailer_contents.each do |mailer_content| %>
+        <tr>
+          <td><%= link_to_if can?(:read, mailer_content), mailer_content, [:admin, mailer_content] %></td>
+          <td><%= t(mailer_content.published?) %></td>
+          <td class="text-end">
+            <%= edit_link mailer_content %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+

@@ -32,3 +32,8 @@ Page.find_or_create_by(internal_identifier: 'donation') do |page|
     page.name = "Faire un don"
     page.slug = 'faire-un-don'
 end
+MailerContent.find_or_create_by(identifier: 'welcome_message') do |mailer_content|
+    mailer_content.subject = 'Merci pour votre inscription !'
+    mailer_content.body = '<p>Bienvenue</p>'
+    mailer_content.published = false
+end
