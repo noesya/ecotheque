@@ -1,5 +1,5 @@
 class Admin::MailerContentsController < Admin::ApplicationController
-  
+
   load_and_authorize_resource
 
   def index
@@ -32,7 +32,6 @@ class Admin::MailerContentsController < Admin::ApplicationController
     super
     add_breadcrumb MailerContent.model_name.human, admin_mailer_contents_path
     breadcrumb_for @mailer_content
-
   end
 
   def mailer_content_params
