@@ -1,4 +1,4 @@
-<%= content_for :title, User::Log.model_name.human(count: 2) %>
+<%= content_for :title, "#{User::Log.model_name.human(count: 2)} (#{@logs.total_count})" %>
 
 <%= render 'list', logs: @logs %>
 <%= paginate @logs, theme: 'bootstrap-5' %>
