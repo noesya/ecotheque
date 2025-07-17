@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_07_10_095933) do
+ActiveRecord::Schema[8.0].define(version: 2025_07_17_105918) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "unaccent"
@@ -100,6 +100,15 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_10_095933) do
     t.uuid "actor_id", null: false
     t.uuid "user_id", null: false
     t.index ["actor_id", "user_id"], name: "index_actors_users_on_actor_id_and_user_id"
+  end
+
+  create_table "admin_file_exports", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "user_id", null: false
+    t.uuid "uuid", null: false
+    t.datetime "expires_at", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_admin_file_exports_on_user_id"
   end
 
   create_table "banners", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -547,6 +556,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_10_095933) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "admin_file_exports", "users"
   add_foreign_key "definition_aliases", "definitions"
   add_foreign_key "materials", "actors"
   add_foreign_key "page_blocks", "pages"

@@ -1,4 +1,11 @@
 GIT
+  remote: https://github.com/noesya/fast_excel_rails.git
+  revision: c22bf5a4291f0ac91cde7b4822b71b905b83d4e7
+  specs:
+    fast_excel_rails (0.1.0)
+      fast_excel (~> 0.1)
+
+GIT
   remote: https://github.com/noesya/summernote-rails.git
   revision: f7ce423738fa98a1a2bacc509d6906e03b498a0e
   branch: fix/dart-sass
@@ -210,6 +217,8 @@ GEM
     faraday-typhoeus (1.1.0)
       faraday (~> 2.0)
       typhoeus (~> 1.4)
+    fast_excel (0.5.0)
+      ffi (> 1.9, < 2)
     ffi (1.17.2-arm64-darwin)
     ffi (1.17.2-x86_64-darwin)
     ffi (1.17.2-x86_64-linux-gnu)
@@ -488,6 +497,8 @@ DEPENDENCIES
   enum_help (~> 0)
   faceted_search
   faraday-typhoeus (~> 1.1)
+  fast_excel (~> 0.5.0)
+  fast_excel_rails!
   gdpr (~> 1)
   geocoder (~> 1.8)
   good_job (~> 3)

@@ -54,6 +54,7 @@ class User < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :logs, dependent: :nullify
+  has_many :file_exports, class_name: 'Admin::FileExport', dependent: :destroy
 
   has_and_belongs_to_many :projects
   has_and_belongs_to_many :technics

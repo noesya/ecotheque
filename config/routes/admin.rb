@@ -60,6 +60,7 @@ namespace :admin do
     end
   end
   resources :mailer_contents, except: [:new, :create, :destroy]
+  resources :file_exports, only: :show
   get 'banner' => 'banner#edit'
   patch 'banner' => 'banner#update'
   get 'analytics' => 'analytics#index'

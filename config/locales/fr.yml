@@ -285,6 +285,9 @@ fr:
     dashboard: Tableau de bord
     definitions_hint: Des variantes du titre qui seront recherchées également dans les articles pour afficher le texte.
     deleted_user: Utilisateur·rice supprimé·e
+    export: Exporter en xlsx
+    export_expired: Votre export a expiré.
+    export_launched: Nous préparons votre export. Vous recevrez un email dès qu'il est terminé !
     file_hint_with_formats: Fichiers %{formats} uniquement.
     file_hint_with_formats_and_filesize: Fichiers %{formats} uniquement. %{filesize} max.
     filters:
@@ -458,6 +461,10 @@ fr:
     sign_in_with_sso: Se connecter en SSO
     subtitle: Vous devez être authentifié pour continuer
   mailers:
+    export_ok:
+      subject: Votre export est prêt.
+      body: Voici <a href="%{export_url}">votre export de %{kind}</a>.<br><br>Le lien expire le %{expires_at}.<br><br>Bonne journée !
+      body_short: Voici <a href="%{export_url}">votre export d'%{kind}</a>.<br><br>Le lien expire le %{expires_at}.<br><br>Bonne journée !
     yours: Cordialement.
   materials:
     call_to_action:

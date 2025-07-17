@@ -4,3 +4,7 @@
 
 <%= render 'admin/users/list', users: @users %>
 <%= paginate @users, theme: 'bootstrap-5' %>
+
+<% content_for :buttons do %>
+  <%= link_to t('admin.export'), request.params.merge(format: "xlsx"), class: button_classes %>
+<% end %>

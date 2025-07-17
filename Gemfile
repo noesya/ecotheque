@@ -18,6 +18,8 @@ gem "elasticsearch", "~> 7"
 gem "enum_help", "~> 0"
 gem "faceted_search"#, path: '../faceted_search'
 gem "faraday-typhoeus", "~> 1.1"
+gem "fast_excel", "~> 0.5.0"
+gem "fast_excel_rails", git: 'https://github.com/noesya/fast_excel_rails.git'
 gem "gdpr", "~> 1"
 gem "geocoder", "~> 1.8"
 gem "good_job", "~> 3"
@@ -59,3 +61,4 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+

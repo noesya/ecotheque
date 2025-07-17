@@ -1,0 +1,35 @@
+@user_ids ||= user_ids
+
+worksheet = workbook.add_worksheet("export")
+
+date_format = workbook.number_format("[$-409]dd/mm/yyyy;@")
+datetime_format = workbook.number_format("[$-409]dd/mm/yyyy hh:mm;@")
+
+headers = [
+  User.human_attribute_name(:last_name),
+  User.human_attribute_name(:first_name),
+  User.human_attribute_name(:email),
+  User.human_attribute_name(:mobile_phone),
+  User.human_attribute_name(:role),
+  User.human_attribute_name(:created_at),
+  User::Log.model_name.human(count: 2)
+]
+worksheet.set_column(5, 5, 20, date_format)
+
+worksheet.append_row(headers, workbook.bold_format)
+
+User.where(id: @user_ids).find_each(order: :desc) do |user|
+  infos = [
+    user.last_name,
+    user.first_name,
+    user.email,
+    user.mobile_phone,
+    t("activerecord.attributes.user.roles.#{user.role}"),
+    user.created_at,
+    user.logs.count
+  ]
+ 
+  worksheet.append_row(infos)
+end
+
+workbook.close

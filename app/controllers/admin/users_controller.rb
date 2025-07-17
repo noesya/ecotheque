@@ -4,8 +4,23 @@ class Admin::UsersController < Admin::ApplicationController
   def index
     @users = @users.autofilter(params[:filters])
                    .ordered_by_date
-                   .page(params[:page])
-    breadcrumb
+    respond_to do |format|
+      format.html {
+        @users = @users.page(params[:page])
+        breadcrumb
+      }
+      format.xlsx {
+        @user_ids = @users.pluck(:id)
+        filename = "users-#{Time.now.strftime("%Y%m%d%H%M%S")}.xlsx"
+        if @users.count > 1000
+          Admin::ExportUsersJob.perform_later(user: current_user, filename: filename, user_ids: @user_ids)
+          redirect_back fallback_location: admin_users_url,
+                        notice: t('admin.export_launched')
+        else
+          response.headers['Content-Disposition'] = "attachment; filename=#{filename}"
+        end
+      }
+    end
   end
 
   def show

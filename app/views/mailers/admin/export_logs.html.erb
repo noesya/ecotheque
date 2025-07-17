@@ -1,0 +1,6 @@
+<%= t(
+      'mailers.export_ok.body',
+      kind: User::Log.model_name.human(count: 2).downcase,
+      export_url: admin_file_export_url(@export),
+      expires_at: l(@export.expires_at)
+    ).html_safe %>

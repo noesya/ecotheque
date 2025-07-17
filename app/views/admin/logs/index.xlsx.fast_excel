@@ -1,0 +1,29 @@
+@log_ids ||= log_ids
+
+worksheet = workbook.add_worksheet("export")
+
+date_format = workbook.number_format("[$-409]dd/mm/yyyy;@")
+datetime_format = workbook.number_format("[$-409]dd/mm/yyyy hh:mm;@")
+
+headers = [
+  User.model_name.human,
+  User::Log.human_attribute_name('about'),
+  User::Log.human_attribute_name('filename'),
+  User::Log.human_attribute_name('created_at')
+]
+worksheet.set_column(3, 3, 20, date_format)
+
+worksheet.append_row(headers, workbook.bold_format)
+
+User::Log.where(id: @log_ids).find_each(order: :desc) do |log|
+  infos = [
+    log.user,
+    log.about,
+    log.filename,
+    log.created_at
+  ]
+ 
+  worksheet.append_row(infos)
+end
+
+workbook.close
