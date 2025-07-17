@@ -43,4 +43,26 @@
       </div>
     <% end %>
   <% end %>
+  <%# special case for User::Log %>
+  <% if User::Log.accessible_by(current_ability).any? %>
+    <div class="col-lg-3 col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-4 text-center">
+              <i class="<%= Icon::LOG %> display-6 text-primary"></i>
+            </div>
+            <div class="col-8">
+              <h2 class="h6 text-muted">
+                <%= link_to User::Log.model_name.human(count:2), admin_logs_path, class: 'stretched-link' %>
+              </h2>
+              <p class="font-extrabold mb-0 lead">
+                <%= User::Log.accessible_by(current_ability).count %>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
