@@ -18,18 +18,24 @@ worksheet.set_column(5, 5, 20, date_format)
 
 worksheet.append_row(headers, workbook.bold_format)
 
-User.where(id: @user_ids).find_each(order: :desc) do |user|
-  infos = [
-    user.last_name,
-    user.first_name,
-    user.email,
-    user.mobile_phone,
-    t("activerecord.attributes.user.roles.#{user.role}"),
-    user.created_at,
-    user.logs.count
-  ]
- 
-  worksheet.append_row(infos)
+total_pages = User.where(id: @user_ids).page(1).per(1000).total_pages
+
+(1..total_pages).each do |page_number|
+  users = User.where(id: @user_ids).ordered.page(page_number).per(1000)
+
+  users.each do |user|
+    infos = [
+      user.last_name,
+      user.first_name,
+      user.email,
+      user.mobile_phone,
+      t("activerecord.attributes.user.roles.#{user.role}"),
+      user.created_at,
+      user.logs.count
+    ]
+  
+    worksheet.append_row(infos)
+  end
 end
 
 workbook.close

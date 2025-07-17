@@ -15,15 +15,21 @@ worksheet.set_column(3, 3, 20, date_format)
 
 worksheet.append_row(headers, workbook.bold_format)
 
-User::Log.where(id: @log_ids).find_each(order: :desc) do |log|
-  infos = [
-    log.user,
-    log.about,
-    log.filename,
-    log.created_at
-  ]
- 
-  worksheet.append_row(infos)
+total_pages = User::Log.where(id: @log_ids).page(1).per(1000).total_pages
+
+(1..total_pages).each do |page_number|
+  logs = User::Log.where(id: @log_ids).ordered.page(page_number).per(1000)
+
+  logs.each do |log|
+    infos = [
+      log.user,
+      log.about,
+      log.filename,
+      log.created_at
+    ]
+  
+    worksheet.append_row(infos)
+  end
 end
 
 workbook.close

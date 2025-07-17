@@ -63,7 +63,7 @@ class User < ApplicationRecord
 
   has_one_attached_deletable :image
 
-  scope :ordered, -> { order(:last_name, :first_name) }
+  scope :ordered, -> { order("TRIM(LOWER(UNACCENT(last_name))), TRIM(LOWER(UNACCENT(first_name)))") }
   scope :ordered_by_date, -> { order(created_at: :desc) }
   scope :allowing_listing, -> { where(allow_listing: true) }
 
