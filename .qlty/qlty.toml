@@ -1,0 +1,18 @@
+config_version = "0"
+
+exclude_patterns = [
+  "node_modules/**",
+  "vendor/**",
+  "db/**",
+  "config/**",
+  "docs/**",
+  "test/**"
+]
+
+test_patterns = [
+  "test/**"
+]
+
+[[source]]
+name = "default"
+default = true
