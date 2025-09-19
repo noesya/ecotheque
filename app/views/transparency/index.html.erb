@@ -12,29 +12,34 @@
   </div>
 </header>
 
-<div class="document-content bg-white py-5">
-  <div class="container">
-    <div class="table-responsive">
-      <table class="table">
-        <thead>
-          <tr>
-            <th><%= Transparency::Year.human_attribute_name('value') %></th>
-            <th class="text-end"><%= Transparency::Revenue.model_name.human(count: 2) %></th>
-            <th class="text-end"><%= Transparency::Cost.model_name.human(count: 2) %></th>
-            <th class="text-end"><%= Transparency::Year.human_attribute_name('total') %></th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @years.each do |year| %>
+<%= render 'transparency/year', year: @current_year %>
+
+<% if @previous_years.any? %>
+  <div class="document-content bg-white py-5">
+    <div class="container">
+      <h2>Archives</h2>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
             <tr>
-              <td class="lead"><%= link_to year, transparency_year_path(year.value) %></td>
-              <td class="text-end"><%= number_to_currency year.total_revenues, precision: 0 %></td>
-              <td class="text-end"><%= number_to_currency year.total_costs, precision: 0 %></td>
-              <td class="text-end"><%= number_to_currency year.total, precision: 0 %></td>
+              <th><%= Transparency::Year.human_attribute_name('value') %></th>
+              <th class="text-end"><%= Transparency::Revenue.model_name.human(count: 2) %></th>
+              <th class="text-end"><%= Transparency::Cost.model_name.human(count: 2) %></th>
+              <th class="text-end"><%= Transparency::Year.human_attribute_name('total') %></th>
             </tr>
-          <% end %>
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            <% @previous_years.each do |year| %>
+              <tr>
+                <td class="lead"><%= link_to year, transparency_year_path(year.value) %></td>
+                <td class="text-end"><%= number_to_currency year.total_revenues, precision: 0 %></td>
+                <td class="text-end"><%= number_to_currency year.total_costs, precision: 0 %></td>
+                <td class="text-end"><%= number_to_currency year.total, precision: 0 %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
-</div>
+<% end %>
