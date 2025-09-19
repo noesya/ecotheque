@@ -1,7 +1,8 @@
 class TransparencyController < ApplicationController
 
   def index
-    @years = Transparency::Year.ordered
+    @current_year = Transparency::Year.ordered.first
+    @previous_years = Transparency::Year.where.not(id: @current_year).ordered
     breadcrumb
   end
 

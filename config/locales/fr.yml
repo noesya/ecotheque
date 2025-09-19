@@ -162,11 +162,11 @@ fr:
       transparency/cost:
         amount: Montant
         description: Description
-        title: Titre
+        title: Organisation
       transparency/revenue:
         amount: Montant
         description: Description
-        title: Titre
+        title: Organisation contributrice
       transparency/year:
         total: Solde
         value: Année
@@ -647,8 +647,8 @@ fr:
         add: Ajouter un coût
         total: Total des coûts
       revenues:
-        add: Ajouter un revenu
-        total: Total des revenus
+        add: Ajouter une contribution
+        total: Total des contributions
       title: Transparence
     users:
       ecosystem:

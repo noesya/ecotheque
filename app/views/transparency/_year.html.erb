@@ -1,0 +1,64 @@
+<div class="document-content bg-white py-5">
+  <div class="container">
+    <div class="mb-5">
+      <h2>Contributions annuelles</h2>
+      <div class="table-responsive">
+        <table class="<%= table_classes %>">
+          <thead>
+            <tr>
+              <th><%= Transparency::Revenue.human_attribute_name('title') %></th>
+              <th class="text-end"><%= Transparency::Revenue.human_attribute_name('amount') %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% year.revenues.each do |revenue| %>
+              <tr>
+                <td><%= revenue %></td>
+                <td class="text-end"><%= number_to_currency revenue.amount, precision: 0 %></td>
+              </tr>
+            <% end %>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th class="fw-bold"><%= t('ui.transparency.revenues.total') %></th>
+              <td class="fw-bold text-end"><%= number_to_currency year.total_revenues, precision: 0 %></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+    <div class="mb-5">
+      <h2>Coûts de fonctionnement annuel</h2>
+      <div class="table-responsive">
+        <table class="<%= table_classes %>">
+          <thead>
+            <tr>
+              <th><%= Transparency::Cost.human_attribute_name('title') %></th>
+              <th class="text-start"><%= Transparency::Cost.human_attribute_name('description') %></th>
+              <th class="text-end"><%= Transparency::Cost.human_attribute_name('amount') %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% year.costs.each do |cost| %>
+              <tr>
+                <td><%= cost %></td>
+                <td><%= simple_format cost.description %></td>
+                <td class="text-end"><%= number_to_currency cost.amount, precision: 0 %></td>
+              </tr>
+            <% end %>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th class="fw-bold" colspan="2"><%= t('ui.transparency.costs.total') %></th>
+              <td class="fw-boldtext-end"><%= number_to_currency year.total_costs, precision: 0 %></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+    <div class="mb-5">
+      <h2><%= Transparency::Year.human_attribute_name(:total) %></h2>
+      <p class="display-4"><%= number_to_currency year.total, precision: 0 %></p>
+    </div>
+  </div>
+</div>
