@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "3.4.5"
+ruby "3.4.6"
 
 gem "activestorage-scaleway-service", "~> 1"
 gem "bootsnap", require: false
@@ -61,4 +61,3 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
-
