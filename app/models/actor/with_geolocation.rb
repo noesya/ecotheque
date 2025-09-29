@@ -8,7 +8,7 @@ module Actor::WithGeolocation
   end
 
   def full_address_for_geocode
-    [address, zipcode, city, country].join
+    "#{address}, #{zipcode} #{city} #{country}"
   end
 
   def full_address_present?
