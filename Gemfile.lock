@@ -424,10 +424,6 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 4.0)
       websocket (~> 1.0)
-    sib-api-v3-sdk (9.1.0)
-      addressable (~> 2.3, >= 2.3.0)
-      json (~> 2.1, >= 2.1.0)
-      typhoeus (~> 1.0, >= 1.0.1)
     simple-navigation (4.4.0)
       activesupport (>= 2.3.2)
     simple_form (5.3.1)
@@ -528,7 +524,6 @@ DEPENDENCIES
   rails-i18n
   searchkick (~> 5.3)
   selenium-webdriver
-  sib-api-v3-sdk (~> 9)
   simple-navigation (~> 4)
   simple_form (~> 5)
   simple_form_bs5_file_input (~> 0)
