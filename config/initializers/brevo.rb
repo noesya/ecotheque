@@ -1,17 +1,17 @@
 # Load the gem
-require 'sib-api-v3-sdk'
+require 'brevo'
 
 # Setup authorization
-SibApiV3Sdk.configure do |config|
+Brevo.configure do |config|
   config.api_key['api-key'] = ENV['BREVO_API_KEY']
   config.api_key['partner-key'] = ENV['BREVO_API_KEY']
 end
 
-api_instance = SibApiV3Sdk::AccountApi.new
+api_instance = Brevo::AccountApi.new
 
 begin
   # Get your account information, plan and credits details
   result = api_instance.get_account
-rescue SibApiV3Sdk::ApiError => e
+rescue Brevo::ApiError => e
   puts "Exception when calling AccountApi->get_account: #{e}"
 end

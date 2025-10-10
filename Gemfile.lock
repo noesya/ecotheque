@@ -142,6 +142,10 @@ GEM
       rails (>= 3.1)
     breadcrumbs_on_rails (4.1.0)
       railties (>= 5.0)
+    brevo (4.0.0)
+      addressable (~> 2.3, >= 2.3.0)
+      json (~> 2.1, >= 2.1.0)
+      typhoeus (~> 1.0, >= 1.0.1)
     bugsnag (6.28.0)
       concurrent-ruby (~> 1.0)
     builder (3.3.0)
@@ -490,6 +494,7 @@ DEPENDENCIES
   bootstrap (~> 5)
   bootstrap5-kaminari-views (~> 0)
   breadcrumbs_on_rails (~> 4)
+  brevo (~> 4.0)
   bugsnag (~> 6)
   byebug
   cancancan (~> 3)
