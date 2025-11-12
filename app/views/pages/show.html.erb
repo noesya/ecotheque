@@ -36,7 +36,7 @@
 
 <div class="document-content">
   <% if @page.is_donation? %>
-    <div class="d-flex justify-content-center bg-light pt-5">
+    <div class="d-flex justify-content-center bg-light pt-5 px-2">
       <iframe id="haWidgetLight" allowtransparency="true" allow="payment" scrolling="auto" src="https://www.helloasso.com/associations/association-les-augures/formulaires/1/widget?view=form" style="width: clamp(300px, 100%, 26rem); margin: 0 auto; border: none;" onload="window.addEventListener('message', e => {const dataHeight = e.data.height; const haWidgetElement = document.getElementById('haWidgetLight'); haWidgetElement.height = dataHeight + 'px';})"></iframe>
     </div>
   <% end %>
