@@ -317,14 +317,14 @@ fr:
         enabled: "Actif\_?"
         explanation_text: Texte d'explication
     publication_statuses:
-      draft: Brouillon
+      draft: 1 - Brouillon
       manufacturer: Fabricant
       missing_informations: Infos manquantes
-      ready_for_publication: Prêt pour la publication
-      redaction_in_progress: En cours d'écriture
+      ready_for_publication: 3 - Prête pour deuxième relecture
+      redaction_in_progress: 2 - Prête pour première relecture
       rejected: Rejetée
       validated: Validée
-      waiting_for_approval: En attente de validation
+      waiting_for_approval: À traiter en comité
       waiting_for_attribution: En attente d'attribution
     structure:
       add_file: Ajouter un fichier

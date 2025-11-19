@@ -4,14 +4,14 @@ module Publishable
   included do
     enum :status, {
       draft: 0,
-      rejected: 10,
-      waiting_for_attribution: 20,
-      redaction_in_progress: 30,
+      # waiting_for_attribution: 20,
       missing_informations: 40,
+      redaction_in_progress: 30,
       waiting_for_approval: 50,
+      ready_for_publication: 80,
       validated: 60,
       manufacturer: 70,
-      ready_for_publication: 80
+      rejected: 10
     }, prefix: :status
 
     scope :published, -> { where(published: true) }

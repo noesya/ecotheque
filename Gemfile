@@ -3,6 +3,7 @@ source "https://rubygems.org"
 ruby "3.4.7"
 
 gem "activestorage-scaleway-service", "~> 1"
+gem "benchmark"
 gem "bootsnap", require: false
 gem "bootstrap", "~> 5"
 gem "bootstrap5-kaminari-views", "~> 0"
