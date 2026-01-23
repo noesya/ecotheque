@@ -33,7 +33,7 @@ gem "ostruct", "~> 0" # Removed from bundled gems in Ruby 4.0, needed for simple
 gem "popper_js", "~> 2"
 gem "pg", "~> 1"
 gem "puma", "~> 7"
-gem "rails", "~> 8.1"
+gem "rails", "~> 8.1.0"
 gem "rails-i18n", "~> 8"
 gem "searchkick", "~> 5.3"
 gem "simple_form", "~> 5"
