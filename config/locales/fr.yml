@@ -184,7 +184,7 @@ fr:
         role: Rôle
         roles:
           admin: Administrateur
-          lab_member: Membre
+          lab_member: Membre du comité
           superadmin: Superadmin
           visitor: Visiteur
         website: Site internet
