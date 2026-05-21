@@ -4,6 +4,13 @@
   <div class="col-lg-4">
     <%= show @actor, :image, type: :image %>
     <%= show @actor, :logo, type: :image %>
+    <% if @actor.full_address_present? %>
+      <%= show @actor, :address, type: :string, value: @actor.full_address %>
+      <% if @actor.geocoded? %>
+        <%= show @actor, :latitude, type: :string %>
+        <%= show @actor, :longitude, type: :string %>
+      <% end %>
+    <% end %>
   </div>
   <div class="col-lg-8">
     <% if can?(:publish, @actor) %>

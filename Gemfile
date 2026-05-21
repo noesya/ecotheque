@@ -22,7 +22,8 @@ gem "faraday-typhoeus", "~> 1"
 gem "fast_excel", "~> 0.5.0"
 gem "fast_excel_rails", git: 'https://github.com/noesya/fast_excel_rails.git'
 gem "gdpr", "~> 1"
-gem "geocoder", "~> 1"
+# Use Geocoder from GitHub as we need the HTTPS-fix for Adresse Nationale
+gem "geocoder", git: "https://github.com/alexreisner/geocoder.git"
 gem "good_job", "~> 4"
 gem "image_processing", "~> 1"
 gem "jquery-rails", "~> 4"
