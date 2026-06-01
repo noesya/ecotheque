@@ -33,6 +33,7 @@ gem "mazer-rails", "~> 0"
 gem "popper_js", "~> 2"
 gem "pg", "~> 1"
 gem "puma", "~> 7"
+gem "rack-attack", "~> 6.8"
 gem "rails", "~> 8.1.0"
 gem "rails-i18n", "~> 8"
 gem "searchkick", "~> 5.3"
@@ -60,3 +61,4 @@ group :test do
   gem "capybara"
   gem "webdrivers"
 end
+
