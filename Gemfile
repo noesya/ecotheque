@@ -36,6 +36,7 @@ gem "puma", "~> 7"
 gem "rack-attack", "~> 6.8"
 gem "rails", "~> 8.1.0"
 gem "rails-i18n", "~> 8"
+gem "redis", "~> 5.4"
 gem "searchkick", "~> 5.3"
 gem "simple_form", "~> 5"
 gem "simple_form_bs5_file_input", "~> 0"
@@ -61,4 +62,5 @@ group :test do
   gem "capybara"
   gem "webdrivers"
 end
+
 
