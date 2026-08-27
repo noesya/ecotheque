@@ -3,7 +3,7 @@ source "https://rubygems.org"
 ruby "4.0.6"
 
 gem "activestorage-scaleway-service", "~> 1"
-gem "active_hashcash", "~> 0.5.0"
+gem "active_hashcash", "~> 0.4.0"
 gem "bootsnap", require: false
 gem "bootstrap", "~> 5"
 gem "bootstrap5-kaminari-views", "~> 0"
