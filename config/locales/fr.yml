@@ -18,6 +18,8 @@ fr:
     my_account: Mon compte
     subtitle: Au sein de cet espace, vous retrouverez l’ensemble des informations relatives à votre compte écothèque.
     title: Mon compte
+  active_hashcash:
+    error_label: La vérification hashcash a échoué. Veuillez réessayer.
   activemodel:
     models:
       structure:
@@ -144,7 +146,7 @@ fr:
         file: Fichier
         image: Image
         text: Texte
-        title: Titre      
+        title: Titre
       technic:
         actors: Contacts
         authors: Fiche publiée par
@@ -245,7 +247,7 @@ fr:
         other: Régions
       structure/item:
         one: Élément
-        other: Éléments      
+        other: Éléments
       technic:
         one: Technique
         other: Techniques

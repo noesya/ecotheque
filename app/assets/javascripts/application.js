@@ -8,6 +8,7 @@
 //= require jquery-cropper/dist/jquery-cropper
 //= require notyf/notyf.min
 //= require @splidejs/splide/dist/js/splide
+//= require hashcash
 //= require_self
 //= require_tree ./application
 //= require_tree ./commons

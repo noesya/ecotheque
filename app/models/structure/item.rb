@@ -6,7 +6,7 @@
 #  about_class      :string
 #  color            :string
 #  hint             :text
-#  kind             :integer          default("string")
+#  kind             :integer          default(0)
 #  name             :string
 #  position         :integer          default(0)
 #  premium          :boolean          default(FALSE)
@@ -14,7 +14,7 @@
 #  show_label       :boolean          default(TRUE)
 #  slug             :string
 #  with_explanation :boolean          default(TRUE)
-#  zone             :integer          default("page")
+#  zone             :integer          default(3)
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #

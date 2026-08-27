@@ -3,7 +3,7 @@
 # Table name: pages
 #
 #  id                  :uuid             not null, primary key
-#  ancestor_kind       :integer          default("neutral")
+#  ancestor_kind       :integer          default(0)
 #  body_class          :string           default("")
 #  description         :text
 #  internal_identifier :string

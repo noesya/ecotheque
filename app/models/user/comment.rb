@@ -4,7 +4,7 @@
 #
 #  id          :uuid             not null, primary key
 #  about_type  :string           not null, indexed => [about_id]
-#  status      :integer          default("pending")
+#  status      :integer          default(0)
 #  text        :text
 #  title       :string
 #  created_at  :datetime         not null

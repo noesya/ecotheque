@@ -4,7 +4,7 @@
 #
 #  id                        :uuid             not null, primary key
 #  data                      :jsonb
-#  kind                      :integer          default("text")
+#  kind                      :integer          default(1)
 #  name                      :string
 #  position                  :integer          default(1)
 #  searchable_text_from_data :text

@@ -1,6 +1,11 @@
 class Users::RegistrationsController < Devise::RegistrationsController
+  include ActiveHashcash
+
+  before_action :check_hashcash, only: :create
   before_action :configure_sign_up_params, only: :create
   before_action :configure_account_update_params, only: :update
+
+  invisible_captcha only: [:create], honeypot: :ecotheque_verification
 
   def edit
     breadcrumb
@@ -35,5 +40,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def configure_account_update_params
     devise_parameter_sanitizer.permit(:account_update, keys: [:last_name, :first_name, :mobile_phone, :website, :description, :allow_listing, :image, :image_delete, :image_infos])
+  end
+
+  def hashcash_after_failure
+    redirect_to(new_user_registration_path, alert: t("active_hashcash.error_label"))
   end
 end

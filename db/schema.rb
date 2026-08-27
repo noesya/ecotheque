@@ -10,10 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_04_24_102253) do
+ActiveRecord::Schema[8.1].define(version: 2026_08_27_154303) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "unaccent"
+
+  create_table "active_hashcash_stamps", force: :cascade do |t|
+    t.integer "bits", null: false
+    t.jsonb "context"
+    t.string "counter", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.date "date", null: false
+    t.string "ext", null: false
+    t.string "ip_address"
+    t.string "rand", null: false
+    t.string "request_path"
+    t.string "resource", null: false
+    t.datetime "updated_at", precision: nil, null: false
+    t.string "version", null: false
+    t.index ["counter", "rand", "date", "resource", "bits", "version", "ext"], name: "index_active_hashcash_stamps_unique", unique: true
+    t.index ["ip_address", "created_at"], name: "index_active_hashcash_stamps_on_ip_address_and_created_at", where: "(ip_address IS NOT NULL)"
+  end
 
   create_table "active_storage_attachments", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "blob_id", null: false
