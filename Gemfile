@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "4.0.6"
+ruby "4.0.7"
 
 gem "activestorage-scaleway-service", "~> 1"
 gem "active_hashcash", "~> 0.4.0"
@@ -18,10 +18,10 @@ gem "devise-i18n", "~> 1"
 gem "devise-bootstrap5", "~> 0"
 gem "elasticsearch", "~> 7"
 gem "enum_help", "~> 0"
-gem "faceted_search"#, path: '../faceted_search'
-gem "faraday-typhoeus", "~> 1"
+gem "faceted_search"#, path: "../faceted_search"
+gem "faraday-typhoeus", "~> 2"
 gem "fast_excel", "~> 0.5.0"
-gem "fast_excel_rails", git: 'https://github.com/noesya/fast_excel_rails.git'
+gem "fast_excel_rails", git: "https://github.com/noesya/fast_excel_rails.git"
 gem "gdpr", "~> 1"
 # Use Geocoder from GitHub as we need the HTTPS-fix for Adresse Nationale
 gem "geocoder", git: "https://github.com/alexreisner/geocoder.git"
@@ -39,7 +39,7 @@ gem "puma", "~> 8"
 gem "rack-attack", "~> 6.8"
 gem "rails", "~> 8.1.0"
 gem "rails-i18n", "~> 8"
-gem "redis", "~> 5.4"
+gem "redis", "~> 6.0"
 gem "searchkick", "~> 5.3"
 gem "simple_form", "~> 5"
 gem "simple_form_bs5_file_input", "~> 0"

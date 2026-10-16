@@ -29,7 +29,6 @@ class Ability
     can [:read, :update_sources], Project
     can [:read, :update_sources], Material
     can [:read, :update_sources], Technic
-    # can :manage, User::Comment, user_id: @user.id
     can :create, User::Comment
     can :manage, User::Favorite, user_id: @user.id
   end

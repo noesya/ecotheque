@@ -23,7 +23,7 @@
 #  service_access_terms  :text
 #  slug                  :string
 #  sources               :text
-#  status                :integer          default(0)
+#  status                :integer          default("draft")
 #  zipcode               :string
 #  created_at            :datetime         not null
 #  updated_at            :datetime         not null

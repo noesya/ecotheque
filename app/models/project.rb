@@ -10,7 +10,7 @@
 #  published    :boolean          default(FALSE)
 #  slug         :string           uniquely indexed
 #  sources      :text
-#  status       :integer          default(0)
+#  status       :integer          default("draft")
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #
