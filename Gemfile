@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "4.0.7"
+ruby "4.0.9"
 
 gem "activestorage-scaleway-service", "~> 1"
 gem "active_hashcash", "~> 0.4.0"
