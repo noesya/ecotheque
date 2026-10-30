@@ -12,6 +12,7 @@ end
 
 # Always allow requests to assets
 Rack::Attack.safelist('allow assets') { |req| req.path.start_with?('/assets') }
+Rack::Attack.safelist('allow ActiveStorage') { |req| req.path.start_with?('/rails/active_storage') }
 
 # Limit requests by IP address
 Rack::Attack.throttle("Per minute", limit: 25, period: 1.minute) { |req|
