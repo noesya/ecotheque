@@ -14,7 +14,7 @@ end
 Rack::Attack.safelist('allow assets') { |req| req.path.start_with?('/assets') }
 
 # Limit requests by IP address
-Rack::Attack.throttle("Per minute", limit: 75, period: 1.minute) { |req|
+Rack::Attack.throttle("Per minute", limit: 25, period: 1.minute) { |req|
   req.ip
 }
 Rack::Attack.throttle("Per hour", limit: 5_000, period: 1.hour) { |req|
